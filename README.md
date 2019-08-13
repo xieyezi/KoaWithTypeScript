@@ -17,14 +17,15 @@
 
 
 ### 已实现的接口
- method	resource	description
- GET	/	重定向至搜索古诗接口
- GET	/poetry?author=苏轼	     搜索古诗接口
- GET	/author?author=辛弃疾	 搜索作者接口
- POST	/signup	                用户注册(密码加密)
- POST	/signin	                用户登录(jwt鉴权,路由拦截,返回token) 
- POST	/updateuserifno	        用户更改信息
- POST	/deleteuserifno	        用户注销
+ method | resource | description
+ ---- | --- | ----
+ GET  |	/   |  重定向至搜索古诗接口
+ GET  |	/poetry?author=苏轼 | 搜索古诗接口
+ GET  |	/author?author=辛弃疾  |	 搜索作者接口
+ POST |	/signup	          |   用户注册(密码加密)
+ POST |	/signin	          |      用户登录(jwt鉴权,路由拦截,返回token) 
+ POST |	/updateuserifno	  |       用户更改信息
+ POST |	/deleteuserifno	  |       用户注销
 
 
 ### 具体想要实现的功能
