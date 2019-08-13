@@ -7,7 +7,7 @@
  */
 'use strict';
 import * as  mongoose from 'mongoose';
-import bcrypt from 'bcrypt';
+import * as bcrypt from 'bcrypt';
 const Schema = mongoose.Schema;
 // 定义bcrip加密时的配置常量
 const SALT_ROUNDS: number = 10;

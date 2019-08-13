@@ -52,13 +52,13 @@ export default class UserController {
         let userSignIn = ctx.request.body;
         // console.log(userSignIn);
         if (userSignIn) {
-            let isExist = await userIsExist(userSignIn.name);//判断用户是否存在，若存在，则返回user的所有信息，否则返回null
+            let isExist:any = await userIsExist(userSignIn.name);//判断用户是否存在，若存在，则返回user的所有信息，否则返回null
             if (isExist) {
                 //将用户输入的密码和加密密码进行比对
-                let isMatch = await UerInstance.comparePassword(userSignIn.password, isExist.password);
-                //console.log(isMatch);
+                let isMatch:boolean = await UerInstance.comparePassword(userSignIn.password, isExist.password);
+                // console.log(isMatch);
                 if (isMatch) {
-                    console.log("登录成功!" + isExist.name);
+                    console.log("登录成功!" + userSignIn.name);
                     let token = createToken(isExist);
                     let tokenNew = 'Bearer ' + token;
                     let result = {
@@ -68,7 +68,7 @@ export default class UserController {
                     }
                     ctx.response.body = result;
                 } else {
-                    console.log("账户名或密码错误!" + isExist.name);
+                    console.log("账户名或密码错误!" + userSignIn.name);
                     let result = {
                         code: 400,
                         message: "账户名或密码错误!"

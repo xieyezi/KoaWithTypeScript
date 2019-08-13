@@ -6,14 +6,14 @@
  * @LastEditTime: 2019-08-07 17:06:52
  */
 'use strict'
-import JWT from 'jsonwebtoken';
+import * as JWT from 'jsonwebtoken';
 // 自定义生成token的密钥(随意定义的字符串)
 const JWT_SECRET: string = 'user-token';
 
 // 生成JWT Token
 // 同时可以设置过期时间
 export const createToken = (config = {}, expiresIn = '7 days') => {
-    const { name, _id } = config;
+    const { name, _id }: any = config;
     const options = { name, _id };
     const custom = { expiresIn };
     // 通过配置参数，然后调用JWT.sign方法就会生成token

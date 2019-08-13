@@ -1,0 +1,324 @@
+{
+	"info": {
+		"_postman_id": "ce40533c-8110-42d7-9caf-949f058e6354",
+		"name": "古诗词API",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "根路由重定向至搜索古诗接口",
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"id": "dc8ab108-7909-40a0-8fab-044550c85651",
+						"exec": [
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t    \"name\": \"叶纯\", \n        \"signature\": \"sdgdsd\"\n}"
+				},
+				"url": {
+					"raw": "http://localhost:9000/",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "9000",
+					"path": [
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "搜索古诗",
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"id": "931f43ae-681c-45d8-b266-35648aeb211d",
+						"exec": [
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYW1lIjoieGlleWV6aSIsIl9pZCI6IjVkNTI4NzNlZjNmODE1M2ZkODhhYjA5NiIsImlhdCI6MTU2NTY5MDI5MiwiZXhwIjoxNTY2Mjk1MDkyfQ.b1uTX5zITf1Le_sYMY_VFQ5IqY19KpaXORPv7sP_m9A",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "http://localhost:9000/poetry?author=苏轼",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "9000",
+					"path": [
+						"poetry"
+					],
+					"query": [
+						{
+							"key": "author",
+							"value": "苏轼"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "搜索作者",
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"id": "931f43ae-681c-45d8-b266-35648aeb211d",
+						"exec": [
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYW1lIjoieGlleWV6aSIsIl9pZCI6IjVkNTI4NzNlZjNmODE1M2ZkODhhYjA5NiIsImlhdCI6MTU2NTY5MDI5MiwiZXhwIjoxNTY2Mjk1MDkyfQ.b1uTX5zITf1Le_sYMY_VFQ5IqY19KpaXORPv7sP_m9A",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "http://localhost:9000/author?author=辛弃疾&=",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "9000",
+					"path": [
+						"author"
+					],
+					"query": [
+						{
+							"key": "author",
+							"value": "辛弃疾"
+						},
+						{
+							"key": "",
+							"value": ""
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "用户注册",
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"id": "931f43ae-681c-45d8-b266-35648aeb211d",
+						"exec": [
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"name\":\"xieyezi\",\n\t\"phone\":\"17783887443\",\n\t\"email\":\"1435398529@qq.com\",\n\t\"password\":\"chun138132.\"\n}"
+				},
+				"url": {
+					"raw": "http://localhost:9000/signup",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "9000",
+					"path": [
+						"signup"
+					]
+				},
+				"description": "密码自动加密"
+			},
+			"response": []
+		},
+		{
+			"name": "用户登录",
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"id": "931f43ae-681c-45d8-b266-35648aeb211d",
+						"exec": [
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"name\":\"xieyezi\",\n\t\"password\":\"chun138132.\"\n}"
+				},
+				"url": {
+					"raw": "http://localhost:9000/signin",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "9000",
+					"path": [
+						"signin"
+					]
+				},
+				"description": "返回token"
+			},
+			"response": []
+		},
+		{
+			"name": "用户更改信息",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYW1lIjoieGlleWV6aSIsIl9pZCI6IjVkNTI4NzNlZjNmODE1M2ZkODhhYjA5NiIsImlhdCI6MTU2NTY5MDI5MiwiZXhwIjoxNTY2Mjk1MDkyfQ.b1uTX5zITf1Le_sYMY_VFQ5IqY19KpaXORPv7sP_m9A",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"name\":\"xieyezi\",\n\t\"phone\":\"17783887446\",\n\t\"email\":\"143539853333@qq.com\",\n\t\"signature\":\"随风而去\"\n}"
+				},
+				"url": {
+					"raw": "http://localhost:9000/updateuserifno",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "9000",
+					"path": [
+						"updateuserifno"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "用户注销",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYW1lIjoieGlleWV6aSIsIl9pZCI6IjVkNTI4NzNlZjNmODE1M2ZkODhhYjA5NiIsImlhdCI6MTU2NTY5MDI5MiwiZXhwIjoxNTY2Mjk1MDkyfQ.b1uTX5zITf1Le_sYMY_VFQ5IqY19KpaXORPv7sP_m9A",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"name\":\"苏东坡\"\n}"
+				},
+				"url": {
+					"raw": "http://localhost:9000/deleteuserifno",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "9000",
+					"path": [
+						"deleteuserifno"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
