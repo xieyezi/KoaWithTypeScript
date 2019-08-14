@@ -28,6 +28,23 @@
  POST |	/deleteuserifno	  |       用户注销
 
 
+
+### 数据库表结构
+
+ name | description
+ ---- | ---
+ author_song | 宋代作者
+ author_tang | 唐代作者
+ ci_song     | 宋词
+ poet_song   | 宋诗
+ poet_tang   | 唐诗
+ lunyu       | 论语
+ baijiaxing  | 百家姓
+ dizigui     | 弟子规
+ qianziwen   | 千字文
+ huajianji   | 花间集
+ youmengying | 幽梦影
+
 ### 具体想要实现的功能
   1. 使用TypeScript进行项目的实际开发
   2. 安装MongoDb数据库,
