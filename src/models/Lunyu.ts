@@ -4,7 +4,7 @@ const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 const LunyuSchema = new Schema(
     {
-        title: String,
+        chapter: String,
         paragraphs: Array
     }
 )

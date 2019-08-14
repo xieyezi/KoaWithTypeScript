@@ -11,6 +11,15 @@ const fs = require('fs');
 import { Ci_SongModel } from '../models/Ci_Song';
 import { Author_SongCiModel } from '../models/Author_Song_Ci';
 
+import { ShijingModel } from '../models/Shijing'
+import { LunyuModel } from '../models/Lunyu'
+
+import { Author_TangModel } from '../models/Author_Tang'
+import { Poetry_TangModel } from '../models/Poetry_Tang'
+
+import { Author_SongPoetryModel } from '../models/Author_Song_Poetry'
+import { Poetry_SongModel } from '../models/Poetry_Song'
+
 import { readFilePath } from '../utils/readFile';
 
 const DEFAULT_SEARCH_POETRY: string = '晏殊';
@@ -32,13 +41,18 @@ export default class Ctroller {
         let fileArr:any = await readFilePath();
         console.log("异步返回的结果数组：");
         console.log(fileArr);
+        // let authorArr = JSON.parse(fs.readFileSync('/Users/xieyezi/Desktop/NodeLearn/chinese-poetry/json/song/authors.song.json'));
+        // let result = await Author_SongPoetryModel.insertMany(authorArr);
+        // console.log(result);
+        //:TODO 插入宋诗和诗词作者时无法插入，因为他们和唐代的数据结构一样
         fileArr.forEach(filepath => {
             //如果是作者，则新建一个表，将作者信息插入数据库
-            if (filepath === 'D:\\NodeLearn\\chinese-poetry\\ci\\author.song.json') {
+            if (filepath === '/Users/xieyezi/Desktop/NodeLearn/chinese-poetry/json/song/authors.song.json') {
                 let authorArr = JSON.parse(fs.readFileSync(filepath));
                 // console.log(authorArr);
                 if (authorArr) {
-                    Author_SongCiModel.insertMany(authorArr);
+                    let result =  Author_SongPoetryModel.insertMany(authorArr);
+                    console.log(result);
                     // console.log('插入成功！');
                     responseMessage.code = '200';
                     responseMessage.response = '插入成功！';
@@ -47,7 +61,7 @@ export default class Ctroller {
             else {
                 let poetryArr = JSON.parse(fs.readFileSync(filepath));
                 if (poetryArr) {
-                    Ci_SongModel.insertMany(poetryArr);
+                    Poetry_SongModel.insertMany(poetryArr);
                     // console.log('插入成功！');
                     responseMessage.code = '200';
                     responseMessage.response = '插入成功！';
