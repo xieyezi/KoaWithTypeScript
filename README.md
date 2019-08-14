@@ -41,7 +41,7 @@
  lunyu       | 论语
  baijiaxing  | 百家姓
  huajianji   | 花间集
- youmengying | 幽梦影
+ shijing | 诗经
 
 ### 具体想要实现的功能
   1. 使用TypeScript进行项目的实际开发
