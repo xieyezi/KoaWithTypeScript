@@ -8,7 +8,7 @@
 'use-strict'
 require('../db/connect');
 import { BaseContext } from 'koa';
-import { AuthorModel }  from '../models/Author';
+import { Author_SongCiModel }  from '../models/Author_Song_Ci';
 const DEFAULT_SEARCH_AUTHOR:string = '苏轼';
 // const { decodeToken, parseAuth } = require('../utils/account');
 
@@ -23,7 +23,7 @@ export default class AuthorController {
         // const tokenDecoded = decodeToken(authorization);
         // const { _id } = tokenDecoded;  //TODO:这里要考虑一下获得用户ID之后做什么
         // // console.log(_id);
-        const data = await AuthorModel.findOne({ name: query });
+        const data = await Author_SongCiModel.findOne({ name: query });
         // console.log(data);
         if (data) {
             console.log("搜索作者成功!" + query);

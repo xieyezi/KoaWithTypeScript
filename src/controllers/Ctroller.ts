@@ -8,8 +8,8 @@
 'use-trict';
 require('../db/connect');
 const fs = require('fs');
-import { PoetryModel } from '../models/Poetry';
-import { AuthorModel } from '../models/Author';
+import { Ci_SongModel } from '../models/Ci_Song';
+import { Author_SongCiModel } from '../models/Author_Song_Ci';
 
 import { readFilePath } from '../utils/readFile';
 
@@ -30,15 +30,15 @@ export default class Ctroller {
             response: '',
         };
         let fileArr:any = await readFilePath();
-        //  console.log("异步返回的结果数组：");
-        //  console.log(fileArr);
+        console.log("异步返回的结果数组：");
+        console.log(fileArr);
         fileArr.forEach(filepath => {
             //如果是作者，则新建一个表，将作者信息插入数据库
             if (filepath === 'D:\\NodeLearn\\chinese-poetry\\ci\\author.song.json') {
                 let authorArr = JSON.parse(fs.readFileSync(filepath));
                 // console.log(authorArr);
                 if (authorArr) {
-                    AuthorModel.insertMany(authorArr);
+                    Author_SongCiModel.insertMany(authorArr);
                     // console.log('插入成功！');
                     responseMessage.code = '200';
                     responseMessage.response = '插入成功！';
@@ -47,7 +47,7 @@ export default class Ctroller {
             else {
                 let poetryArr = JSON.parse(fs.readFileSync(filepath));
                 if (poetryArr) {
-                    PoetryModel.insertMany(poetryArr);
+                    Ci_SongModel.insertMany(poetryArr);
                     // console.log('插入成功！');
                     responseMessage.code = '200';
                     responseMessage.response = '插入成功！';

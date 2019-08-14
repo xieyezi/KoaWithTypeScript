@@ -40,8 +40,6 @@
  poet_tang   | 唐诗
  lunyu       | 论语
  baijiaxing  | 百家姓
- dizigui     | 弟子规
- qianziwen   | 千字文
  huajianji   | 花间集
  youmengying | 幽梦影
 

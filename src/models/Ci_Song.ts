@@ -6,14 +6,14 @@
  * @LastEditTime: 2019-07-26 16:56:02
  */
 'use strict';
-// 一首诗的数据库模型
+// 宋词的数据库模型
 const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
-const PoetrySchema = new Schema (
+const Ci_SongSchema = new Schema(
     {
-        author: String,  
+        author: String,
         paragraphs: Array,
         rhythmic: String
     }
 )
-export const PoetryModel = mongoose.model('Poetry', PoetrySchema);
+export const Ci_SongModel = mongoose.model('Ci_Song', Ci_SongSchema);

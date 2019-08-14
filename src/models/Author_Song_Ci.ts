@@ -6,14 +6,14 @@
  * @LastEditTime: 2019-08-06 19:07:53
  */
 'use strict';
-// 作者信息的数据库模型
+// 宋词作者信息的数据库模型
 const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
-const AuthorSchema = new Schema (
+const AuthorSongCiSchema = new Schema(
     {
-        description: String,  
+        description: String,
         name: String,
         short_description: String
     }
 )
-export const AuthorModel = mongoose.model('Author', AuthorSchema);
+export const Author_SongCiModel = mongoose.model('Author_Song_Ci', AuthorSongCiSchema);
