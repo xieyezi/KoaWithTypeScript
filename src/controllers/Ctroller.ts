@@ -11,6 +11,20 @@ const fs = require('fs');
 import { Ci_SongModel } from '../models/Ci_Song';
 import { Author_SongCiModel } from '../models/Author_Song_Ci';
 
+import { Author_SongPoetryModel } from '../models/Author_Song_Poetry';
+import { Poetry_SongModel } from '../models/Poetry_Song';
+
+import { Author_TangModel } from '../models/Author_Tang';
+import { Poetry_TangModel } from '../models/Poetry_Tang';
+
+import { ShijingModel } from '../models/Shijing';
+
+import { LunyuModel } from '../models/Lunyu';
+
+import { BaijiaxingModel } from '../models/Baijiaxing';
+
+import { HuajianjiModel } from '../models/Huajianji';
+
 import { readFilePath } from '../utils/readFile';
 
 const DEFAULT_SEARCH_POETRY: string = '晏殊';
@@ -34,11 +48,11 @@ export default class Ctroller {
         console.log(fileArr);
         fileArr.forEach(filepath => {
             //如果是作者，则新建一个表，将作者信息插入数据库
-            if (filepath === 'D:\\NodeLearn\\chinese-poetry\\ci\\author.song.json') {
+            if (filepath === 'D:\\NodeLearn\\chinese-poetry\\json\\tang\\authors.tang.json') {
                 let authorArr = JSON.parse(fs.readFileSync(filepath));
                 // console.log(authorArr);
                 if (authorArr) {
-                    Author_SongCiModel.insertMany(authorArr);
+                    Author_TangModel.insertMany(authorArr);
                     // console.log('插入成功！');
                     responseMessage.code = '200';
                     responseMessage.response = '插入成功！';
@@ -47,7 +61,7 @@ export default class Ctroller {
             else {
                 let poetryArr = JSON.parse(fs.readFileSync(filepath));
                 if (poetryArr) {
-                    Ci_SongModel.insertMany(poetryArr);
+                    HuajianjiModel.insertMany(poetryArr);
                     // console.log('插入成功！');
                     responseMessage.code = '200';
                     responseMessage.response = '插入成功！';

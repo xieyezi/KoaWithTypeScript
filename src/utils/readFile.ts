@@ -8,7 +8,7 @@
 'use-trict'
 const fs = require('fs');
 const path = require('path');
-const FILEPATH = path.resolve('D:\\NodeLearn\\chinese-poetry\\ci');
+const FILEPATH = path.resolve('D:\\NodeLearn\\chinese-poetry\\wudai\\huajianji');
 const REG = /\b\w+(?=.json\b)/;
 
 //按照正则表达式来判断文件是否为.json文件
