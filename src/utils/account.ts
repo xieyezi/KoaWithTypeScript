@@ -33,4 +33,5 @@ export const decodeToken = (token) => {
 };
 
 // 将密钥暴露出去是为了后面验证的时候会用到
-export default { JWT_SECRET }
+// export const JWT_SECRET=  JWT_SECRET;
+export { JWT_SECRET }
