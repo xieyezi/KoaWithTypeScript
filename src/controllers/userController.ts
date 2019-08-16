@@ -34,7 +34,7 @@ export default class UserController {
                 console.log('用户已经存在!');
                 let result = {
                     code: 403,
-                    message: '用户已经存在!'
+                    message: '用户已经存在!请换个用户名!'
                 }
                 ctx.response.body = result;
             }

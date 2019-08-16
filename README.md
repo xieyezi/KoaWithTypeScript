@@ -30,15 +30,17 @@ Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYW1lIjoieGlleWV6aSIsIl9pZCI6IjVk
 
  name | description
  ---- | ---
- author_song | 宋代作者
- author_tang | 唐代作者
+ author_song_ci | 宋词作者
  ci_song     | 宋词
+ author_song_poetry | 宋诗作者
  poet_song   | 宋诗
+ author_tang | 唐代作者
  poet_tang   | 唐诗
  lunyu       | 论语
+ shijing | 诗经
  baijiaxing  | 百家姓
  huajianji   | 花间集
- shijing | 诗经
+ 
 
 ### 具体想要实现的功能
   1. 使用TypeScript进行项目的实际开发

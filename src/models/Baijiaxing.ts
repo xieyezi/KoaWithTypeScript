@@ -7,7 +7,8 @@ const BaijiaxingSchema = new Schema(
         title: String,
         author:String,
         tags:String,
-        paragraphs: Array
+        paragraphs: Array,
+        origin:Array
     }
 )
 export const BaijiaxingModel = mongoose.model('Baijiaxing', BaijiaxingSchema);
