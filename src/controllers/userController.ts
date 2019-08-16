@@ -6,10 +6,9 @@
  * @LastEditTime: 2019-08-07 16:57:00
  */
 'user strict';
-require('../db/connect');
 import { UserModel } from '../models/User';
-import { createToken } from '../utils/account';
-const UerInstance = new UserModel();
+import { createToken,decodeToken, parseAuth } from '../utils/account';
+const UerInstance: any = new UserModel();
 export default class UserController {
     //用户注册
     public static async signUp(ctx, next) {
@@ -20,7 +19,7 @@ export default class UserController {
             let isExist = await userIsExist(newUser.name);
             // console.log(isExist);
             if (!isExist) {
-                let user = new UserModel(newUser);
+                let user: any = new UserModel(newUser);
                 let info = await user.save(user);
                 // console.log(info);
                 if (info.name) {
@@ -52,10 +51,10 @@ export default class UserController {
         let userSignIn = ctx.request.body;
         // console.log(userSignIn);
         if (userSignIn) {
-            let isExist:any = await userIsExist(userSignIn.name);//判断用户是否存在，若存在，则返回user的所有信息，否则返回null
+            let isExist: any = await userIsExist(userSignIn.name);//判断用户是否存在，若存在，则返回user的所有信息，否则返回null
             if (isExist) {
                 //将用户输入的密码和加密密码进行比对
-                let isMatch:boolean = await UerInstance.comparePassword(userSignIn.password, isExist.password);
+                let isMatch: boolean = await UerInstance.comparePassword(userSignIn.password, isExist.password);
                 // console.log(isMatch);
                 if (isMatch) {
                     console.log("登录成功!" + userSignIn.name);
@@ -85,7 +84,7 @@ export default class UserController {
         }
     };
     //用户修改个人信息
-    public static  async updateUserInfo(ctx, next) {
+    public static async updateUserInfo(ctx, next) {
         let userUpdate = ctx.request.body;
         //console.log(userUpdate);
         if (userUpdate) {
@@ -120,7 +119,7 @@ export default class UserController {
 
     };
     //用户注销
-    public static  async deleteUserInfo(ctx, next) {
+    public static async deleteUserInfo(ctx, next) {
         let userDelete = ctx.request.body;
         // console.log(userDelete);
         if (userDelete) {
@@ -171,3 +170,9 @@ function userIsExist(userName) {
     })
 
 }
+//以下是解析token获得用户ID的操作
+ // const authorization = parseAuth(ctx);
+ // // 根据token解析出token中的用户_id
+ // const tokenDecoded = decodeToken(authorization);
+// const { _id } = tokenDecoded;
+// // console.log(_id);     

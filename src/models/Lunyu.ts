@@ -1,6 +1,6 @@
 'use strict';
 // 论语的数据库模型
-const mongoose = require('mongoose');
+import mongoose from "mongoose";
 const Schema = mongoose.Schema;
 const LunyuSchema = new Schema(
     {

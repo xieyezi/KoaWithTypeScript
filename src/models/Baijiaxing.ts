@@ -1,6 +1,6 @@
 'use strict';
 // 百家姓的数据库模型
-const mongoose = require('mongoose');
+import mongoose from "mongoose";
 const Schema = mongoose.Schema;
 const BaijiaxingSchema = new Schema(
     {

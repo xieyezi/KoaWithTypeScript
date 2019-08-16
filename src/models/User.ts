@@ -1,13 +1,6 @@
-/*
- * @Author: xieyezi
- * @Github: https://github.com/xieyezi
- * @Date: 2019-08-06 10:10:16
- * @LastEditors: xieyezi
- * @LastEditTime: 2019-08-07 13:10:33
- */
 'use strict';
-import * as  mongoose from 'mongoose';
-import * as bcrypt from 'bcrypt';
+import mongoose from "mongoose";
+import bcrypt from 'bcrypt';
 const Schema = mongoose.Schema;
 // 定义bcrip加密时的配置常量
 const SALT_ROUNDS: number = 10;
@@ -54,21 +47,5 @@ const comparePassword = function(userPassword, passwordHash){
     });
 }
 UserSchema.methods.comparePassword = comparePassword;
-// UserSchema.methods = {
-//     // 定义一个对比密码是否正确的方法
-//     // userPassword用户提交的密码
-//     // passwordHash数据库查出来的加过密的密码
-//     comparePassword(userPassword, passwordHash) {
-//         return new Promise((resolve, reject) => {
-//             bcrypt.compare(userPassword, passwordHash, (err, res) => {
-//                 // 验证完成
-//                 // res值为false|true，表示密码不同/相同
-//                 if (!err) return resolve(res);
-//                 // 验证出错
-//                 return reject(err);
-//             });
-//         });
-//     }
-// }
 
 export const UserModel = mongoose.model('User', UserSchema);

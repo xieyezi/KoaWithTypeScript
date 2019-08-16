@@ -5,8 +5,10 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "tsc && node --max-old-space-size=8192 dist/app.js",
-    "watch-server": "nodemon --watch 'src/**/*' -e ts,tsx --exec 'ts-node' ./src/app.ts"
+    "serve": "tsc && node dist/app.js",
+    "start": "npm run serve",
+    "watch": "nodemon --watch 'src/**/*' -e ts,tsx --exec 'ts-node' ./src/app.ts",
+    "build": "tsc"
   },
   "author": "xieyezi",
   "license": "ISC",
@@ -17,12 +19,17 @@
     "koa-bodyparser": "^4.2.1",
     "koa-jwt": "^3.6.0",
     "koa-router": "^7.4.0",
+    "koa-swagger-decorator": "^1.5.16",
     "koa2-cors": "^2.0.6",
     "mongoose": "^5.6.9"
   },
   "devDependencies": {
     "@types/koa": "^2.0.49",
+    "@types/koa-bodyparser": "^4.3.0",
+    "@types/koa-cors": "0.0.0",
+    "@types/koa-jwt": "^3.3.0",
     "@types/koa-router": "^7.0.42",
+    "@types/node": "^12.7.2",
     "nodemon": "^1.19.1",
     "ts-node": "^8.3.0",
     "typescript": "^3.5.3"

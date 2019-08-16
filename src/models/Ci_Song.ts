@@ -7,7 +7,7 @@
  */
 'use strict';
 // 宋词的数据库模型
-const mongoose = require('mongoose');
+import mongoose from "mongoose";
 const Schema = mongoose.Schema;
 const Ci_SongSchema = new Schema(
     {

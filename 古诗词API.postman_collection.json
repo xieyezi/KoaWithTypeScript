@@ -6,167 +6,6 @@
 	},
 	"item": [
 		{
-			"name": "根路由重定向至搜索古诗接口",
-			"event": [
-				{
-					"listen": "prerequest",
-					"script": {
-						"id": "dc8ab108-7909-40a0-8fab-044550c85651",
-						"exec": [
-							""
-						],
-						"type": "text/javascript"
-					}
-				}
-			],
-			"protocolProfileBehavior": {
-				"disableBodyPruning": true
-			},
-			"request": {
-				"method": "GET",
-				"header": [
-					{
-						"key": "Content-Type",
-						"name": "Content-Type",
-						"value": "application/json",
-						"type": "text"
-					}
-				],
-				"body": {
-					"mode": "raw",
-					"raw": "{\n\t    \"name\": \"叶纯\", \n        \"signature\": \"sdgdsd\"\n}"
-				},
-				"url": {
-					"raw": "http://localhost:9000/",
-					"protocol": "http",
-					"host": [
-						"localhost"
-					],
-					"port": "9000",
-					"path": [
-						""
-					]
-				}
-			},
-			"response": []
-		},
-		{
-			"name": "搜索古诗",
-			"event": [
-				{
-					"listen": "prerequest",
-					"script": {
-						"id": "931f43ae-681c-45d8-b266-35648aeb211d",
-						"exec": [
-							""
-						],
-						"type": "text/javascript"
-					}
-				}
-			],
-			"protocolProfileBehavior": {
-				"disableBodyPruning": true
-			},
-			"request": {
-				"method": "GET",
-				"header": [
-					{
-						"key": "Content-Type",
-						"name": "Content-Type",
-						"value": "application/json",
-						"type": "text"
-					},
-					{
-						"key": "Authorization",
-						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYW1lIjoieGlleWV6aSIsIl9pZCI6IjVkNTI4NzNlZjNmODE1M2ZkODhhYjA5NiIsImlhdCI6MTU2NTY5MDI5MiwiZXhwIjoxNTY2Mjk1MDkyfQ.b1uTX5zITf1Le_sYMY_VFQ5IqY19KpaXORPv7sP_m9A",
-						"type": "text"
-					}
-				],
-				"body": {
-					"mode": "raw",
-					"raw": ""
-				},
-				"url": {
-					"raw": "http://localhost:9000/poetry?author=苏轼",
-					"protocol": "http",
-					"host": [
-						"localhost"
-					],
-					"port": "9000",
-					"path": [
-						"poetry"
-					],
-					"query": [
-						{
-							"key": "author",
-							"value": "苏轼"
-						}
-					]
-				}
-			},
-			"response": []
-		},
-		{
-			"name": "搜索作者",
-			"event": [
-				{
-					"listen": "prerequest",
-					"script": {
-						"id": "931f43ae-681c-45d8-b266-35648aeb211d",
-						"exec": [
-							""
-						],
-						"type": "text/javascript"
-					}
-				}
-			],
-			"protocolProfileBehavior": {
-				"disableBodyPruning": true
-			},
-			"request": {
-				"method": "GET",
-				"header": [
-					{
-						"key": "Content-Type",
-						"name": "Content-Type",
-						"value": "application/json",
-						"type": "text"
-					},
-					{
-						"key": "Authorization",
-						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYW1lIjoieGlleWV6aSIsIl9pZCI6IjVkNTI4NzNlZjNmODE1M2ZkODhhYjA5NiIsImlhdCI6MTU2NTY5MDI5MiwiZXhwIjoxNTY2Mjk1MDkyfQ.b1uTX5zITf1Le_sYMY_VFQ5IqY19KpaXORPv7sP_m9A",
-						"type": "text"
-					}
-				],
-				"body": {
-					"mode": "raw",
-					"raw": ""
-				},
-				"url": {
-					"raw": "http://localhost:9000/author?author=辛弃疾&=",
-					"protocol": "http",
-					"host": [
-						"localhost"
-					],
-					"port": "9000",
-					"path": [
-						"author"
-					],
-					"query": [
-						{
-							"key": "author",
-							"value": "辛弃疾"
-						},
-						{
-							"key": "",
-							"value": ""
-						}
-					]
-				}
-			},
-			"response": []
-		},
-		{
 			"name": "用户注册",
 			"event": [
 				{
@@ -264,13 +103,13 @@
 					},
 					{
 						"key": "Authorization",
-						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYW1lIjoieGlleWV6aSIsIl9pZCI6IjVkNTI4NzNlZjNmODE1M2ZkODhhYjA5NiIsImlhdCI6MTU2NTY5MDI5MiwiZXhwIjoxNTY2Mjk1MDkyfQ.b1uTX5zITf1Le_sYMY_VFQ5IqY19KpaXORPv7sP_m9A",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYW1lIjoieGlleWV6aSIsIl9pZCI6IjVkNTQxYjBhNjRlYjhlYjE3MDdiNjU1NiIsImlhdCI6MTU2NTg3NzE5NiwiZXhwIjoxNTY2NDgxOTk2fQ.CCkvk0tv_XhJN3_mPWZlKfIcsu4EtB_yh4dR7k4Nfhk",
 						"type": "text"
 					}
 				],
 				"body": {
 					"mode": "raw",
-					"raw": "{\n\t\"name\":\"xieyezi\",\n\t\"phone\":\"17783887446\",\n\t\"email\":\"143539853333@qq.com\",\n\t\"signature\":\"随风而去\"\n}"
+					"raw": "{\n\t\"name\":\"xieyezi\",\n\t\"phone\":\"17783887446\",\n\t\"email\":\"143539853333@qq.com\",\n\t\"signature\":\"很爱娇娇\"\n}"
 				},
 				"url": {
 					"raw": "http://localhost:9000/updateuserifno",
@@ -298,7 +137,7 @@
 					},
 					{
 						"key": "Authorization",
-						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYW1lIjoieGlleWV6aSIsIl9pZCI6IjVkNTI4NzNlZjNmODE1M2ZkODhhYjA5NiIsImlhdCI6MTU2NTY5MDI5MiwiZXhwIjoxNTY2Mjk1MDkyfQ.b1uTX5zITf1Le_sYMY_VFQ5IqY19KpaXORPv7sP_m9A",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYW1lIjoieGlleWV6aSIsIl9pZCI6IjVkNTQxYjBhNjRlYjhlYjE3MDdiNjU1NiIsImlhdCI6MTU2NTg3NzE5NiwiZXhwIjoxNTY2NDgxOTk2fQ.CCkvk0tv_XhJN3_mPWZlKfIcsu4EtB_yh4dR7k4Nfhk",
 						"type": "text"
 					}
 				],
@@ -315,6 +154,404 @@
 					"port": "9000",
 					"path": [
 						"deleteuserifno"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "根路由重定向至搜索宋词接口",
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"id": "dc8ab108-7909-40a0-8fab-044550c85651",
+						"exec": [
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYW1lIjoieGlleWV6aSIsIl9pZCI6IjVkNTQxYjBhNjRlYjhlYjE3MDdiNjU1NiIsImlhdCI6MTU2NTg3NzE5NiwiZXhwIjoxNTY2NDgxOTk2fQ.CCkvk0tv_XhJN3_mPWZlKfIcsu4EtB_yh4dR7k4Nfhk",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t    \"name\": \"叶纯\", \n        \"signature\": \"sdgdsd\"\n}"
+				},
+				"url": {
+					"raw": "http://localhost:9000/",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "9000",
+					"path": [
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "搜索宋词",
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"id": "931f43ae-681c-45d8-b266-35648aeb211d",
+						"exec": [
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYW1lIjoieGlleWV6aSIsIl9pZCI6IjVkNTQxYjBhNjRlYjhlYjE3MDdiNjU1NiIsImlhdCI6MTU2NTg3NzE5NiwiZXhwIjoxNTY2NDgxOTk2fQ.CCkvk0tv_XhJN3_mPWZlKfIcsu4EtB_yh4dR7k4Nfhk",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "http://localhost:9000/searchSongCi?author=辛弃疾",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "9000",
+					"path": [
+						"searchSongCi"
+					],
+					"query": [
+						{
+							"key": "author",
+							"value": "辛弃疾"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "搜索宋词作者",
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"id": "931f43ae-681c-45d8-b266-35648aeb211d",
+						"exec": [
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYW1lIjoieGlleWV6aSIsIl9pZCI6IjVkNTQxYjBhNjRlYjhlYjE3MDdiNjU1NiIsImlhdCI6MTU2NTg3NzE5NiwiZXhwIjoxNTY2NDgxOTk2fQ.CCkvk0tv_XhJN3_mPWZlKfIcsu4EtB_yh4dR7k4Nfhk",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "http://localhost:9000/searchSongCiAuthor?author_songci=辛弃疾",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "9000",
+					"path": [
+						"searchSongCiAuthor"
+					],
+					"query": [
+						{
+							"key": "author_songci",
+							"value": "辛弃疾"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "搜索宋诗",
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"id": "931f43ae-681c-45d8-b266-35648aeb211d",
+						"exec": [
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYW1lIjoieGlleWV6aSIsIl9pZCI6IjVkNTQxYjBhNjRlYjhlYjE3MDdiNjU1NiIsImlhdCI6MTU2NTg3NzE5NiwiZXhwIjoxNTY2NDgxOTk2fQ.CCkvk0tv_XhJN3_mPWZlKfIcsu4EtB_yh4dR7k4Nfhk",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "http://localhost:9000/searchSongPoetry?author=宋太祖",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "9000",
+					"path": [
+						"searchSongPoetry"
+					],
+					"query": [
+						{
+							"key": "author",
+							"value": "宋太祖"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "搜索宋诗作者",
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"id": "931f43ae-681c-45d8-b266-35648aeb211d",
+						"exec": [
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYW1lIjoieGlleWV6aSIsIl9pZCI6IjVkNTQxYjBhNjRlYjhlYjE3MDdiNjU1NiIsImlhdCI6MTU2NTg3NzE5NiwiZXhwIjoxNTY2NDgxOTk2fQ.CCkvk0tv_XhJN3_mPWZlKfIcsu4EtB_yh4dR7k4Nfhk",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "http://localhost:9000/searchSongPoetryAuthor?=&author_songpoetry=宋太祖",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "9000",
+					"path": [
+						"searchSongPoetryAuthor"
+					],
+					"query": [
+						{
+							"key": "",
+							"value": ""
+						},
+						{
+							"key": "author_songpoetry",
+							"value": "宋太祖"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "搜索唐诗",
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"id": "931f43ae-681c-45d8-b266-35648aeb211d",
+						"exec": [
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYW1lIjoieGlleWV6aSIsIl9pZCI6IjVkNTQxYjBhNjRlYjhlYjE3MDdiNjU1NiIsImlhdCI6MTU2NTg3NzE5NiwiZXhwIjoxNTY2NDgxOTk2fQ.CCkvk0tv_XhJN3_mPWZlKfIcsu4EtB_yh4dR7k4Nfhk",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "http://localhost:9000/searchTangPoetry?=&author=李白",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "9000",
+					"path": [
+						"searchTangPoetry"
+					],
+					"query": [
+						{
+							"key": "",
+							"value": ""
+						},
+						{
+							"key": "author",
+							"value": "李白"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "搜索唐诗作者",
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"id": "931f43ae-681c-45d8-b266-35648aeb211d",
+						"exec": [
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYW1lIjoieGlleWV6aSIsIl9pZCI6IjVkNTQxYjBhNjRlYjhlYjE3MDdiNjU1NiIsImlhdCI6MTU2NTg3NzE5NiwiZXhwIjoxNTY2NDgxOTk2fQ.CCkvk0tv_XhJN3_mPWZlKfIcsu4EtB_yh4dR7k4Nfhk",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "http://localhost:9000/searchTangPoetryAuthor?=&author_tangpoetry=李白",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "9000",
+					"path": [
+						"searchTangPoetryAuthor"
+					],
+					"query": [
+						{
+							"key": "",
+							"value": ""
+						},
+						{
+							"key": "author_tangpoetry",
+							"value": "李白"
+						}
 					]
 				}
 			},

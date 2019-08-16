@@ -1,6 +1,6 @@
 'use strict';
 // 唐诗的数据库模型
-const mongoose = require('mongoose');
+import mongoose from "mongoose";
 const Schema = mongoose.Schema;
 const Poetry_TangSchema = new Schema(
     {
