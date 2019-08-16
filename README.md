@@ -73,16 +73,6 @@ Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYW1lIjoieGlleWV6aSIsIl9pZCI6IjVk
 ###  目标
   通过Koa+MongoDB搭建一个古诗词的 GraphQl API，然后用flutter 开发一个关于古诗词学习的APP,循序渐进！!
 
-### 问题总结
-  1. 在读文件的时候，出现了内存泄漏的情况，解决方法：
- ```
-    "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "tsc && node --max-old-space-size=8192 dist/app.js",
-    "watch-server": "nodemon --watch 'src/**/*' -e ts,tsx --exec 'ts-node' ./src/app.ts"
-  }
- ```
- 将node --max-old-space-size=8192 设置为8G即可.
 
 ### 安装前提
 1. Node.js v7.6.0及其以上版本
@@ -144,3 +134,15 @@ packageName | description
  CORS | 跨域处理
  koa-swagger-decorator | 生成API文档
  mongoose | 操作mongoDB数据库
+
+
+### 问题总结
+  1. 在读文件的时候，出现了内存泄漏的情况，解决方法：
+ ```
+    "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "tsc && node --max-old-space-size=8192 dist/app.js",
+    "watch-server": "nodemon --watch 'src/**/*' -e ts,tsx --exec 'ts-node' ./src/app.ts"
+  }
+ ```
+ 将node --max-old-space-size=8192 设置为8G即可.
