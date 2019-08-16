@@ -83,3 +83,64 @@ Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYW1lIjoieGlleWV6aSIsIl9pZCI6IjVk
   }
  ```
  将node --max-old-space-size=8192 设置为8G即可.
+
+### 安装前提
+1. Node.js v7.6.0及其以上版本
+2. 全局安装TypeScript : `npm install -g typescript`
+
+### 快速开始
+
+* clone 项目
+`git clone https://github.com/xieyezi/KoaWithTypeScript.git `
+
+* 安装依赖
+```
+cd <projectName>
+npm install
+```
+* 运行和打包
+```
+npm run start
+npm run build
+```
+### 命令预览
+
+ Npm Script | description
+ ---- | ---
+ npm run start | 和'npm run serve' 一样，运行项目
+ npm run serve | 运行项目
+ npm run watch | 利用Nodemon实时监听项目
+ npm run bulid | 打包项目
+
+###  TypeScript 配置文件
+
+```
+{
+  "compilerOptions": {
+    /* Basic Options */
+    "target": "ES2017",                       /* Specify ECMAScript target version: 'ES3' (default), 'ES5', 'ES2015', 'ES2016', 'ES2017','ES2018' or 'ESNEXT'. */
+    "module": "commonjs",                     /* Specify module code generation: 'none', 'commonjs', 'amd', 'system', 'umd', 'es2015', or 'ESNext'. */
+    "sourceMap": true,                        /* Generates corresponding '.map' file. */
+    "outDir": "./dist",                         /* Redirect output structure to the directory. */
+    "moduleResolution": "node",               /* Specify module resolution strategy: 'node' (Node.js) or 'classic' (TypeScript pre-1.6). */
+    "baseUrl": ".",                           /* Base directory to resolve non-absolute module names. */
+    "esModuleInterop":true,
+    "experimentalDecorators": true,           /* Enables experimental support for ES7 decorators. */
+  },
+  "include": [
+      "./src/**/*"
+  ]
+}
+```
+### 用到的中间件(middleware)
+
+packageName | description
+ ---- | ---
+ koa-router | 实现接口路由
+ koa-bodyparser | 解析post请求数据
+ bcrypt | 对用户提交的密码进行“加盐”加密
+ koa-jwt | 用户登录鉴权(路由拦截)
+ jsonwebtoken | 生成token
+ CORS | 跨域处理
+ koa-swagger-decorator | 生成API文档
+ mongoose | 操作mongoDB数据库
