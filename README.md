@@ -1,5 +1,5 @@
 <h1 align="center">KoaWithTypeScript</h1>
-
+<br />
  <div align="center">
  <img src="https://img.shields.io/badge/koa-v2.7.0-brightgreen"/>
  <img src="https://img.shields.io/badge/TypeScript-v3.5.2-orange"/>
@@ -7,8 +7,6 @@
 </div> 
 <br />
 <br />
-<br />
-
   近来在学习node.js和TypeScript，同时也接触了Koa这个框架，循序渐进的搭了这个项目框架。此项目的主要目的是构建一个良好的项目设置和工作流，以便使用KOA和MongoDB在TypeScript中编写Node api GraphQL。
 
 
