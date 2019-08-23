@@ -1,4 +1,4 @@
-<p align="center" style="font-size:22px;">KoaWithTypeScript</p>
+<h1 align="center">KoaWithTypeScript</h1>
 
  ![](https://img.shields.io/badge/koa-v2.7.0-brightgreen) ![](https://img.shields.io/badge/TypeScript-v3.5.2-orange) ![](https://img.shields.io/badge/build-passing-brightgreen)
 
