@@ -36,4 +36,4 @@ router.swagger({
   });
 router.mapDir(__dirname + '/../');
 
-export { router };
+export default  router;
