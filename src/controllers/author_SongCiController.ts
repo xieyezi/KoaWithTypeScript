@@ -8,7 +8,7 @@ export default class Author_SongCi_Controller {
     @request('get', '/searchSongCiAuthor')
     @summary('搜索宋词作者的接口')
     @query({
-        author_songci: { type: 'string', required: true, default: DEFAULT_SEARCH_AUTHOR, description: '作者名字' },
+        author_songci: { type: 'string', required: true, description: '作者名字' },
     })
     public static async SearchSongCiAuthor(ctx: BaseContext, next) {
         let query = ctx.request.query.author_songci ? ctx.request.query.author_songci : DEFAULT_SEARCH_AUTHOR;

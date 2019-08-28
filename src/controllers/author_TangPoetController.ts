@@ -8,7 +8,7 @@ export default class Author_SongPoetry_Controller {
     @request('get', '/searchTangPoetryAuthor')
     @summary('搜索唐诗作者的接口')
     @query({
-        author_tangpoetry: { type: 'string', required: true, default: DEFAULT_SEARCH_AUTHOR, description: '作者名字' },
+        author_tangpoetry: { type: 'string', required: true, description: '作者名字' },
     })
     public static async SearchTangPoetryAuthor(ctx: BaseContext, next) {
         let query = ctx.request.query.author_tangpoetry ? ctx.request.query.author_tangpoetry : DEFAULT_SEARCH_AUTHOR;

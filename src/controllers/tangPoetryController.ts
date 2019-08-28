@@ -10,7 +10,7 @@ export default class SongCiController {
     @request('get', '/searchTangPoetry')
     @summary('搜索唐诗的接口')
     @query({
-        author: { type: 'string', required: true, default: DEFAULT_SEARCH_POETRY, description: '作者名字' },
+        author: { type: 'string', required: true,description: '作者名字' },
     })
     public static async SearchTangPoetry(ctx: BaseContext, next) {
         //从request里面获取参数

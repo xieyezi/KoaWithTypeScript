@@ -1,6 +1,7 @@
-import Router from 'koa-router';
+// import Router from 'koa-router';
+import { SwaggerRouter } from 'koa-swagger-decorator';
 import * as controller from '../controllers';
-const router = new Router();
+const router = new SwaggerRouter();
 router
     //根路由和增加数据的接口
     .get('/', controller.controll.poetrydefault)
@@ -22,5 +23,17 @@ router
     .get('/searchTangPoetry', controller.tangpoetry.SearchTangPoetry)
     //搜索唐诗作者
     .get('/searchTangPoetryAuthor', controller.author_tangpoetry.SearchTangPoetryAuthor)
+
+
+
+
+
+// swagger docs avaliable at http://localhost:3000/swagger-html
+router.swagger({
+    title: 'API V1 Server',
+    description: 'API DOC',
+    version: '1.0.0'
+  });
+router.mapDir(__dirname);
 
 export { router };
