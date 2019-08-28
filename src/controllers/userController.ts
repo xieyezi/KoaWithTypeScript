@@ -1,15 +1,24 @@
-/*
- * @Author: xieyezi
- * @Github: https://github.com/xieyezi
- * @Date: 2019-08-06 10:24:30
- * @LastEditors: xieyezi
- * @LastEditTime: 2019-08-07 16:57:00
- */
 'user strict';
 import { UserModel } from '../models/User';
 import { createToken,decodeToken, parseAuth } from '../utils/account';
+import { request, summary, query,body } from 'koa-swagger-decorator';
 const UerInstance: any = new UserModel();
+const userSchema = {
+  name: { type: 'string', required: true },
+  phone: { type: 'string', required: true},
+  email: { type: 'string', required: true },
+  password: { type: 'string', required: true },
+  signature:  { type: 'string', required: false },
+  readHistory: { type: 'array', required: false },
+  collections: { type: 'array', required: false },
+  like: { type: 'array', required: false },
+  message: { type: 'array', required: false }
+}
 export default class UserController {
+    //搜索宋诗的接口
+    @request('post', '/signup')
+    @summary('用户注册')
+    @body(userSchema)
     //用户注册
     public static async signUp(ctx, next) {
         let newUser = ctx.request.body;
@@ -46,6 +55,13 @@ export default class UserController {
             ctx.response.body = result;
         }
     };
+    //搜索宋诗的接口
+    @request('post', '/signin')
+    @summary('用户登录')
+    @query({
+        name: { type: 'string', required: true,description: '用户名' },
+        password:{ type: 'string', required: true,description: '密码' }
+    })
     //用户登录
     public static async signIn(ctx, next) {
         let userSignIn = ctx.request.body;
@@ -83,6 +99,9 @@ export default class UserController {
             }
         }
     };
+    @request('post', '/updateuserifno')
+    @summary('用户修改信息')
+    @body(userSchema)
     //用户修改个人信息
     public static async updateUserInfo(ctx, next) {
         let userUpdate = ctx.request.body;
@@ -118,6 +137,11 @@ export default class UserController {
         }
 
     };
+    @request('post', '/deleteuserifno')
+    @summary('用户登录')
+    @query({
+        name: { type: 'string', required: true,description: '用户名' }
+    })
     //用户注销
     public static async deleteUserInfo(ctx, next) {
         let userDelete = ctx.request.body;

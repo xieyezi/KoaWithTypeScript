@@ -3,23 +3,21 @@ require('../db/connect');
 const fs = require('fs');
 import { Ci_SongModel } from '../models/Ci_Song';
 import { Author_SongCiModel } from '../models/Author_Song_Ci';
-
 import { ShijingModel } from '../models/Shijing';
 import { LunyuModel } from '../models/Lunyu';
-
 import { Author_TangModel } from '../models/Author_Tang';
 import { Poetry_TangModel } from '../models/Poetry_Tang';
-
 import { Author_SongPoetryModel } from '../models/Author_Song_Poetry';
 import { Poetry_SongModel } from '../models/Poetry_Song';
-
 import { BaijiaxingModel } from '../models/Baijiaxing';
-
 import { readFilePath } from '../utils/readFile';
+import { request, summary} from 'koa-swagger-decorator';
 
 const DEFAULT_SEARCH_POETRY: string = '晏殊';
 //封装API对数据库进行基本的操作
 export default class Ctroller {
+    @request('get', '/')
+    @summary('根路由，重定向至搜索宋词接口')
     //进入api时默认调用搜索接口,默认进入“搜索古诗接口”，关键词为晏殊
     public static async poetrydefault(ctx, next) {
         ctx.status = 302;

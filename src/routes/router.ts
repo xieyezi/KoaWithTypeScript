@@ -34,6 +34,6 @@ router.swagger({
     description: 'API DOC',
     version: '1.0.0'
   });
-router.mapDir(__dirname);
+router.mapDir(__dirname + '/../');
 
 export { router };

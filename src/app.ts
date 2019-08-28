@@ -56,7 +56,8 @@ app.use(
 		path: [
 			/^\/add/,
 			/^\/signup/,
-			/^\/signin/
+			/^\/signin/,
+			/^\/swagger-/
 		]
 	})
 );
