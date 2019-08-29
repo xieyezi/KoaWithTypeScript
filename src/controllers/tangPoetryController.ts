@@ -19,7 +19,7 @@ export default class SongCiController {
         let query: string = ctx.request.query.author ? ctx.request.query.author : DEFAULT_SEARCH_POETRY;
         const data = await Poetry_TangModel.find({ author: query });
         if (data.length > 0) {
-            console.log("搜索唐诗成功!" + query);
+            console.log("搜索唐  诗成功!" + query);
             ctx.response.body = data;
         } else {
             ctx.throw(404, '暂无数据');
