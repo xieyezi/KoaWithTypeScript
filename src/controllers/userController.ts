@@ -33,26 +33,14 @@ export default class UserController {
                 // console.log(info);
                 if (info.name) {
                     console.log("新建用户成功!" + info.name);
-                    let result = {
-                        code: 200,
-                        message: "新建用户成功!"
-                    }
-                    ctx.response.body = result;
+                    ctx.response.body = "新建用户成功!";
                 }
             } else {
                 console.log('用户已经存在!');
-                let result = {
-                    code: 403,
-                    message: '用户已经存在!请换个用户名!'
-                }
-                ctx.response.body = result;
+                ctx.throw(403, "用户已经存在!请换个用户名");
             }
         } else {
-            let result = {
-                code: 400,
-                message: '提交参数不完整!'
-            }
-            ctx.response.body = result;
+            ctx.throw(400, "提交参数不完整");
         }
     };
     //搜索宋诗的接口
@@ -84,18 +72,10 @@ export default class UserController {
                     ctx.response.body = result;
                 } else {
                     console.log("账户名或密码错误!" + userSignIn.name);
-                    let result = {
-                        code: 400,
-                        message: "账户名或密码错误!"
-                    }
-                    ctx.response.body = result;
+                    ctx.throw(400, "账户名或密码错误");
                 }
             } else {
-                let result = {
-                    code: 404,
-                    message: "用户不存在!"
-                }
-                ctx.response.body = result;
+                ctx.throw(404, "用户不存在");
             }
         }
     };
@@ -115,25 +95,13 @@ export default class UserController {
                 console.log(state);
                 if (state._id) {
                     console.log("用户信息修改成功!" + state.name);
-                    let result = {
-                        code: 200,
-                        response: state
-                    }
-                    ctx.response.body = result;
+                    ctx.response.body = state;
                 }
             } else {
-                let result = {
-                    code: 404,
-                    message: "用户不存在!"
-                }
-                ctx.response.body = result;
+                ctx.throw(404, '用户不存在');
             }
         } else {
-            let result = {
-                code: 400,
-                message: '提交参数不完整!'
-            }
-            ctx.response.body = result;
+            ctx.throw(404, '提交参数不完整');
         }
 
     };
@@ -153,25 +121,13 @@ export default class UserController {
                 let state = await UserModel.deleteOne(conditions);
                 if (state.ok === 1) {
                     console.log("用户信息删除成功!" + userDelete.name);
-                    let result = {
-                        code: 200,
-                        message: "用户信息删除成功!"
-                    }
-                    ctx.response.body = result;
+                    ctx.response.body = "用户信息删除成功!";
                 }
             } else {
-                let result = {
-                    code: 404,
-                    message: "用户不存在!"
-                }
-                ctx.response.body = result;
+                ctx.throw(404, '用户不存在');           
             }
         } else {
-            let result = {
-                code: 400,
-                message: '提交参数不完整!'
-            }
-            ctx.response.body = result;
+            ctx.throw(404, '提交参数不完整');
         }
     };
 }

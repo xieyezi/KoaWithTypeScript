@@ -12,15 +12,18 @@ router
     .post('/updateuserifno', controller.user.updateUserInfo)
     .post('/deleteuserifno', controller.user.deleteUserInfo)
     //搜索宋词
-    .get('/searchSongCi', controller.songci.SearchSongCi)
+    .get('/searchSongCiByAuthor', controller.songci.SearchSongCiByAuthor)
+    .get('/searchSongCiByQuery', controller.songci.SearchSongCiByQuery)
     //搜索宋词作者的路由
     .get('/searchSongCiAuthor', controller.author_songci.SearchSongCiAuthor)
     //搜索宋诗
-    .get('/searchSongPoetry', controller.songpoetry.SearchSongPoetry)
+    .get('/searchSongPoetryByAuthor', controller.songpoetry.SearchSongPoetryByAuthor)
+    .get('/searchSongPoetryByQuery', controller.songpoetry.SearchSongPoetryByQuery)
     //搜索宋诗作者
     .get('/searchSongPoetryAuthor', controller.author_songpoetry.SearchSongPoetryAuthor)
     //搜索唐诗
-    .get('/searchTangPoetry', controller.tangpoetry.SearchTangPoetry)
+    .get('/searchTangPoetryByAuthor', controller.tangpoetry.SearchTangPoetryByAuthor)
+    .get('/searchTangPoetryByQuery', controller.tangpoetry.SearchTangPoetryByQuery)
     //搜索唐诗作者
     .get('/searchTangPoetryAuthor', controller.author_tangpoetry.SearchTangPoetryAuthor)
 

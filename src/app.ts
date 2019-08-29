@@ -3,7 +3,6 @@ import bodyParser from 'koa-bodyparser';
 import mongoose from "mongoose";
 import cors from 'koa2-cors';
 import jwt from 'koa-jwt';
-import errorHandle from './middleware/errorHandle';
 import router from './routes/router';
 import { systemConfig } from './config/config';
 
@@ -29,8 +28,6 @@ mongoose.connection.on('disconnected', function () {
 app.use(bodyParser());// 解析request的body
 // 处理跨域的配置
 app.use(cors());
-//错误处理
-// app.use(errorHandle());
 /**
  * jwt验证错误的处理
  * jwt会对验证不通过的路由返回401状态码

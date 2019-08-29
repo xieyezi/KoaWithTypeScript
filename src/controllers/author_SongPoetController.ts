@@ -17,17 +17,9 @@ export default class Author_SongPoetry_Controller {
         // console.log(data);
         if (data) {
             console.log("搜索宋诗作者成功!" + query);
-            const result = {
-                code: 200,
-                response: data,
-            };
-            ctx.response.body = result;
+            ctx.response.body = data;
         } else {
-            const result = {
-                code: 404,
-                response: '暂无数据',
-            };
-            ctx.response.body = result;
+            ctx.throw(404, '暂无数据');
         }
     }
 }
